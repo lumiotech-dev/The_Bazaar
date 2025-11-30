@@ -1,0 +1,41 @@
+{
+  "name": "@bazaar/api-service",
+  "version": "1.0.0",
+  "description": "The Bazaar - Fastify API Service",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "db:push": "drizzle-kit push:mysql",
+    "db:migrate": "drizzle-kit migrate:mysql"
+  },
+  "dependencies": {
+    "fastify": "^4.25.0",
+    "@fastify/cors": "^8.5.0",
+    "@fastify/helmet": "^11.1.0",
+    "@fastify/jwt": "^7.8.0",
+    "@fastify/bcrypt": "^1.0.0",
+    "drizzle-orm": "^0.30.0",
+    "mysql2": "^3.6.0",
+    "dotenv": "^16.3.0",
+    "@bazaar/types": "workspace:*",
+    "@bazaar/utils": "workspace:*",
+    "@bazaar/domains": "workspace:*",
+    "zod": "^3.22.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "drizzle-kit": "^0.20.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0"
+  }
+}

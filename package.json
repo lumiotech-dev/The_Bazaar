@@ -1,0 +1,33 @@
+{
+  "name": "the-bazaar-mono",
+  "version": "1.0.0",
+  "description": "The Bazaar - Multi-Tenant E-Commerce Platform",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "clean": "pnpm -r run clean && rm -rf node_modules",
+    "db:push": "pnpm --filter @bazaar/api-service run db:push",
+    "db:migrate": "pnpm --filter @bazaar/api-service run db:migrate"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3"
+  }
+}
